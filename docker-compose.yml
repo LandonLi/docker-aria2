@@ -1,0 +1,16 @@
+---
+version: "2"
+services:
+  aria2:
+    image: aria2:latest
+    container_name: aria2
+    volumes:
+      - /path to config:/etc/aria2
+      - /path to download:/downloads
+    ports:
+      - 6800:6800
+      - 6882:6881/tcp
+      - 6882:6881/udp
+    environment:
+      - token=<your token>
+    restart: unless-stopped
